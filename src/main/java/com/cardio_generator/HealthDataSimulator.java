@@ -116,7 +116,9 @@ public class HealthDataSimulator {
             }
         }
     }
-
+/**
+* Shows how to run the program and what options are available.
+*/
     private static void printHelp() {
         System.out.println("Usage: java HealthDataSimulator [options]");
         System.out.println("Options:");
