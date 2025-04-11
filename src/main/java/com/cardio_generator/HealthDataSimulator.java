@@ -34,6 +34,11 @@ public class HealthDataSimulator {
     private static OutputStrategy outputStrategy = new ConsoleOutputStrategy(); // Default output strategy
     private static final Random random = new Random();
 
+    /**
+     * Main method to start the simulation.
+     * @param args Command-line arguments to set patient count and output method.
+     * @throws IOException If there is an error creating output directories.
+     */
     public static void main(String[] args) throws IOException {
 
         parseArguments(args);
