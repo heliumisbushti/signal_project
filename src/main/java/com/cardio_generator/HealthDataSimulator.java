@@ -22,6 +22,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
+/**
+ * Simulates health data for a number of patients.
+ * It generates data such as ECG, blood pressure, and alerts, and sends it to an output (console, file, etc).
+ */
+
 public class HealthDataSimulator {
 
     private static int patientCount = 50; // Default number of patients
