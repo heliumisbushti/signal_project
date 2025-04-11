@@ -50,7 +50,12 @@ public class HealthDataSimulator {
 
         scheduleTasksForPatients(patientIds);
     }
-
+/**
+* Reads command-line arguments and sets up patient count and output type.
+*
+* @param args Input arguments from command line.
+* @throws IOException If file output path can't be created.
+*/
     private static void parseArguments(String[] args) throws IOException {
         for (int i = 0; i < args.length; i++) {
             switch (args[i]) {
