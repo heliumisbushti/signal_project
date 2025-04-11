@@ -135,7 +135,12 @@ public class HealthDataSimulator {
         System.out.println(
                 "  This command simulates data for 100 patients and sends the output to WebSocket clients connected to port 8080.");
     }
-
+/**
+* Creates a list of patient IDs.
+*
+* @param patientCount Total number of patients to simulate.
+* @return A list of patient IDs starting from 1.
+*/
     private static List<Integer> initializePatientIds(int patientCount) {
         List<Integer> patientIds = new ArrayList<>();
         for (int i = 1; i <= patientCount; i++) {
@@ -143,7 +148,11 @@ public class HealthDataSimulator {
         }
         return patientIds;
     }
-
+/**
+* Schedules data generation tasks (like ECG, blood pressure) for each patient.
+*
+* @param patientIds List of patient IDs.
+*/
     private static void scheduleTasksForPatients(List<Integer> patientIds) {
         ECGDataGenerator ecgDataGenerator = new ECGDataGenerator(patientCount);
         BloodSaturationDataGenerator bloodSaturationDataGenerator = new BloodSaturationDataGenerator(patientCount);
@@ -159,7 +168,13 @@ public class HealthDataSimulator {
             scheduleTask(() -> alertGenerator.generate(patientId, outputStrategy), 20, TimeUnit.SECONDS);
         }
     }
-
+/**
+* Sets up a task to run repeatedly after a fixed delay.
+*
+* @param task     The task to run
+* @param period   How often to run it
+* @param timeUnit Time unit for the period (e.g., seconds, minutes).
+*/
     private static void scheduleTask(Runnable task, long period, TimeUnit timeUnit) {
         scheduler.scheduleAtFixedRate(task, random.nextInt(5), period, timeUnit);
     }
