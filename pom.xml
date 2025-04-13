@@ -29,6 +29,7 @@
 
     </dependencies>
     <build>
+        <finalName>cardio-simulator</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
