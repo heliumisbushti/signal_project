@@ -69,3 +69,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Student ID : i6371087
 Student ID : i6380645
+
+## UML Diagrams 
