@@ -15,6 +15,10 @@ public class AlertGenerator implements PatientDataGenerator {
      */
     private final boolean[] alertStates;
 
+    /**
+     * Constructs an AlertGenerator for the given number of patients.
+     * @param patientCount the number of patients to track
+     */
     public AlertGenerator(int patientCount) {
         AlertStates = new boolean[patientCount + 1];
     }
