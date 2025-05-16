@@ -7,7 +7,13 @@ import com.cardio_generator.outputs.OutputStrategy;
 public class AlertGenerator implements PatientDataGenerator {
 
     public static final Random randomGenerator = new Random();
-    private boolean[] AlertStates; // false = resolved, true = pressed
+    //Field names should be lowerCamelCase.
+    //Renamed from AlertStates to alertStates.
+    //Added a clarifying comment.
+    /**
+     * Tracks alert state for each patient: false = resolved, true = triggered.
+     */
+    private final boolean[] alertStates;
 
     public AlertGenerator(int patientCount) {
         AlertStates = new boolean[patientCount + 1];
