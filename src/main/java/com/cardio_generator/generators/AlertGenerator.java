@@ -47,8 +47,10 @@ public class AlertGenerator implements PatientDataGenerator {
                 }
             }
         } catch (Exception e) {
-            System.err.println("An error occurred while generating alert data for patient " + patientId);
-            e.printStackTrace();
+            //Error messages should be clear and concise.
+            System.err.println("Error generating alert data for patient " + patientId + ": " + e.getMessage());
+            //Avoid printing stack traces unless debugging.
+            //e.printStackTrace();
         }
     }
 }
