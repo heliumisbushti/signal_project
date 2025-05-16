@@ -5,7 +5,7 @@
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="KVcd45YsAqdvj3IUiSUZ-5" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica, &amp;quot;VP Default&amp;quot;; text-wrap-mode: nowrap; background-color: rgb(248, 249, 250);&quot;&gt;AlertGenerator&lt;/span&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="200" y="200" width="280" height="148" as="geometry" />
+          <mxGeometry x="290" y="70" width="280" height="148" as="geometry" />
         </mxCell>
         <mxCell id="KVcd45YsAqdvj3IUiSUZ-6" value="&lt;div&gt;- dataStorage: DataStorage&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="KVcd45YsAqdvj3IUiSUZ-5" vertex="1">
           <mxGeometry y="26" width="280" height="34" as="geometry" />
@@ -17,7 +17,7 @@
           <mxGeometry y="68" width="280" height="80" as="geometry" />
         </mxCell>
         <mxCell id="KVcd45YsAqdvj3IUiSUZ-9" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica, &amp;quot;VP Default&amp;quot;; text-wrap-mode: nowrap; background-color: rgb(248, 249, 250);&quot;&gt;Alert&lt;/span&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="140" y="400" width="180" height="180" as="geometry" />
+          <mxGeometry x="140" y="340" width="180" height="180" as="geometry" />
         </mxCell>
         <mxCell id="KVcd45YsAqdvj3IUiSUZ-10" value="&lt;div&gt;-patientId:string&lt;/div&gt;&lt;div&gt;-condition:string&amp;nbsp;&lt;/div&gt;&lt;div&gt;-timestamp:long&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="KVcd45YsAqdvj3IUiSUZ-9" vertex="1">
           <mxGeometry y="26" width="180" height="54" as="geometry" />
@@ -27,12 +27,6 @@
         </mxCell>
         <mxCell id="KVcd45YsAqdvj3IUiSUZ-12" value="&lt;div&gt;-getPatientId():string&lt;/div&gt;&lt;div&gt;-getCondition():string&amp;nbsp;&lt;/div&gt;&lt;div&gt;-getTimestamp():long&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="KVcd45YsAqdvj3IUiSUZ-9" vertex="1">
           <mxGeometry y="128" width="180" height="52" as="geometry" />
-        </mxCell>
-        <mxCell id="KVcd45YsAqdvj3IUiSUZ-19" value="cardio_generator.com" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;whiteSpace=wrap;labelBackgroundColor=none;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="420" y="130" width="160" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="KVcd45YsAqdvj3IUiSUZ-25" value="Alerts.com" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;whiteSpace=wrap;labelBackgroundColor=none;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="590" y="140" width="160" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
