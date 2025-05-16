@@ -20,7 +20,8 @@ public class AlertGenerator implements PatientDataGenerator {
      * @param patientCount the number of patients to track
      */
     public AlertGenerator(int patientCount) {
-        AlertStates = new boolean[patientCount + 1];
+        //Use 'this.' for field assignment to avoid ambiguity.
+        this.alertStates = new boolean[patientCount + 1];
     }
 
     @Override
