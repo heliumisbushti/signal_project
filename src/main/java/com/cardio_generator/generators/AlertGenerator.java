@@ -27,10 +27,11 @@ public class AlertGenerator implements PatientDataGenerator {
     @Override
     public void generate(int patientId, OutputStrategy outputStrategy) {
         try {
-            if (AlertStates[patientId]) {
-                if (randomGenerator.nextDouble() < 0.9) { // 90% chance to resolve
-                    AlertStates[patientId] = false;
-                    // Output the alert
+            if (alertStates[patientId]) {
+                //90% chance to resolve the alert.
+                if (randomGenerator.nextDouble() < 0.9) {
+                    alertStates[patientId] = false;
+                    // Output the resolved alert.
                     outputStrategy.output(patientId, System.currentTimeMillis(), "Alert", "resolved");
                 }
             } else {
