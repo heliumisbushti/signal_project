@@ -49,10 +49,24 @@ public class Patient {
      *                  epoch
      * @param endTime   the end of the time range, in milliseconds since UNIX epoch
      * @return a list of PatientRecord objects that fall within the specified time
-     *         range
+     * range
      */
     public List<PatientRecord> getRecords(long startTime, long endTime) {
-        // TODO Implement and test this method
-        return this.patientRecords;
+        List<PatientRecord> timeRangeRecords = new ArrayList<>();
+        for (PatientRecord record : this.patientRecords) {
+            long ts = record.getTimestamp();
+            if (ts >= startTime && ts <= endTime) {
+                timeRangeRecords.add(record);
+            }
+        }
+        return timeRangeRecords;
     }
-}
+    /**
+         * Returns Respective ID number
+         * @return PatientId
+         */
+        public int getPatientId(){
+            return patientId;
+        }
+    }
+

@@ -23,7 +23,6 @@ public class AlertGenerator implements PatientDataGenerator {
         //Use 'this.' for field assignment to avoid ambiguity.
         this.alertStates = new boolean[patientCount + 1];
     }
-
     @Override
     public void generate(int patientId, OutputStrategy outputStrategy) {
         try {
@@ -49,8 +48,7 @@ public class AlertGenerator implements PatientDataGenerator {
         } catch (Exception e) {
             //Error messages should be clear and concise.
             System.err.println("Error generating alert data for patient " + patientId + ": " + e.getMessage());
-            //Avoid printing stack traces unless debugging.
-            //e.printStackTrace();
+            e.printStackTrace();
         }
     }
 }
