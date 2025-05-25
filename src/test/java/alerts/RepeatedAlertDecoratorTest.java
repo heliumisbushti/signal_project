@@ -1,5 +1,5 @@
-package com.alerts;
-
+package alerts;
+import com.alerts.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -63,7 +63,7 @@ class RepeatedAlertDecoratorTest {
 
         Thread.sleep(1000); // allow 2-ish checks
         decorator.cancelChecks();
-        long afterCancelTime = System.currentTimeMillis();
+
 
         Thread.sleep(1000); // wait to see if it restarts (it shouldn’t)
 

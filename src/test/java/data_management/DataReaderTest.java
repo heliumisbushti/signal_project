@@ -1,7 +1,6 @@
-package com.data_management;
-
+package data_management;
 import org.junit.jupiter.api.Test;
-
+import com.data_management.*;
 import java.io.IOException;
 import java.util.List;
 
@@ -12,12 +11,7 @@ class DataReaderTest {
     @Test
     void testMockDataReaderAddsDataToStorage() throws IOException {
         // Arrange: create a mock DataReader
-        DataReader mockReader = new DataReader() {
-            @Override
-            public void readData(DataStorage dataStorage) throws IOException {
-                dataStorage.addPatientData(1, 98.6, "Temperature", 1714376000000L);
-            }
-        };
+        DataReader mockReader = dataStorage -> dataStorage.addPatientData(1, 98.6, "Temperature", 1714376000000L);
 
         DataStorage storage = DataStorage.getInstance();
 

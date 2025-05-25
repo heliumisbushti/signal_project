@@ -1,8 +1,8 @@
-package com.data_management;
+package data_management;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
+import com.data_management.*;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
