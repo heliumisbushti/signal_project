@@ -71,3 +71,10 @@ Student ID : i6371087
 Student ID : i6380645
 
 ## UML Diagrams 
+
+UML diagrams were added(along with their documentation) for the following subsystems:
+- Alert Generation System
+- Data Storage System
+- Patient Identification System
+- Data Access Layer
+These can be found in the [`uml_models`](./uml_models) directory.
