@@ -1,8 +1,10 @@
 package data_management;
 
+import com.data_management.DataStorage;
+import com.data_management.Patient;
+import com.data_management.PatientRecord;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import com.data_management.*;
 
 import java.util.List;
 
@@ -14,8 +16,9 @@ public class DataStorageTest {
 
     @BeforeEach
     public void setUp() {
-        // Reset the singleton for test isolation (not ideal in production, but useful for tests)
         dataStorage = DataStorage.getInstance();
+        // Clear previous patient data if needed
+        dataStorage.getAllPatients().clear();
     }
 
     @Test
@@ -24,7 +27,6 @@ public class DataStorageTest {
         long timestamp = System.currentTimeMillis();
 
         dataStorage.addPatientData(patientId, 98.6, "Temperature", timestamp);
-
         List<PatientRecord> records = dataStorage.getRecords(patientId, timestamp - 1000, timestamp + 1000);
 
         assertEquals(1, records.size(), "Expected one record to be added and retrieved.");
@@ -55,5 +57,36 @@ public class DataStorageTest {
         assertTrue(allPatients.stream().anyMatch(p -> p.getPatientId() == id1));
         assertTrue(allPatients.stream().anyMatch(p -> p.getPatientId() == id2));
     }
-}
 
+    @Test
+    public void testMultipleRecordsTimeRangeFiltering() {
+        int patientId = 303;
+        long now = System.currentTimeMillis();
+
+        dataStorage.addPatientData(patientId, 100, "HeartRate", now - 5000);
+        dataStorage.addPatientData(patientId, 110, "HeartRate", now);
+        dataStorage.addPatientData(patientId, 120, "HeartRate", now + 5000);
+
+        List<PatientRecord> records = dataStorage.getRecords(patientId, now - 1000, now + 1000);
+        assertEquals(1, records.size());
+        assertEquals(110, records.get(0).getMeasurementValue(), 0.001);
+    }
+
+    @Test
+    public void testValidPatientNoMatchingTimeRange() {
+        int patientId = 404;
+        long now = System.currentTimeMillis();
+
+        dataStorage.addPatientData(patientId, 97.5, "Temperature", now);
+
+        List<PatientRecord> result = dataStorage.getRecords(patientId, now + 1000, now + 2000);
+        assertTrue(result.isEmpty(), "No records should be found outside the timestamp range.");
+    }
+
+    @Test
+    public void testSingletonInstanceConsistency() {
+        DataStorage instance1 = DataStorage.getInstance();
+        DataStorage instance2 = DataStorage.getInstance();
+        assertSame(instance1, instance2, "Expected the same singleton instance.");
+    }
+}
