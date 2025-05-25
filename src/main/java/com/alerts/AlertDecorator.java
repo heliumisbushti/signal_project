@@ -1,30 +1,26 @@
 package com.alerts;
 
-public  abstract class AlertDecorator implements AlertInterface{
+public abstract class AlertDecorator implements AlertInterface {
 
-    protected AlertInterface alert;
+    protected AlertInterface decoratedAlert;
 
     public AlertDecorator(AlertInterface alert) {
-        this.alert = alert;
+        this.decoratedAlert = alert;
     }
-    @Override
+
     public String getPatientId() {
-        return "";
+        return decoratedAlert.getPatientId();
     }
 
-    @Override
     public String getCondition() {
-        return "";
+        return decoratedAlert.getCondition();
     }
 
-    @Override
     public long getTimestamp() {
-        return 0;
+        return decoratedAlert.getTimestamp();
     }
 
-    @Override
     public String getMessage() {
-        return "";
+        return decoratedAlert.getMessage();
     }
-
 }
