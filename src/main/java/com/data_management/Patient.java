@@ -35,11 +35,12 @@ public class Patient {
      * @param timestamp        the time at which the measurement was taken, in
      *                         milliseconds since UNIX epoch
      */
-    public void addRecord(double measurementValue, String recordType, long timestamp) {
-        PatientRecord record = new PatientRecord(this.patientId, measurementValue, recordType, timestamp);
-        this.patientRecords.add(record);
+public void addRecord(double measurementValue, String recordType, long timestamp) {
+    PatientRecord newRecord = new PatientRecord(this.patientId, measurementValue, recordType, timestamp);
+    if (!this.patientRecords.contains(newRecord)) {
+        this.patientRecords.add(newRecord);
     }
-
+}
     /**
      * Retrieves a list of PatientRecord objects for this patient that fall within a
      * specified time range.
